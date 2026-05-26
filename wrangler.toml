@@ -1,0 +1,26 @@
+name = "esound-imaging"
+type = "javascript"
+account_id = ""
+workers_dev = true
+route = ""
+zone_id = ""
+
+[env.production]
+name = "esound-imaging-prod"
+route = "esoundimaging.com/*"
+zone_id = ""
+
+[build]
+command = ""
+cwd = "./"
+watch_paths = ["src/**/*.js"]
+
+[build.upload]
+format = "service-worker"
+
+[triggers.crons]
+crons = []
+
+[[routes]]
+pattern = "esoundimaging.com/*"
+zone_id = ""
