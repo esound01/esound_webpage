@@ -3,18 +3,17 @@
    ============================================ */
 
 :root {
-    --primary-color: #8B0000;
-    --secondary-color: #DC143C;
-    --accent-color: #FF1744;
-    --dark-bg: #1a0a0a;
+    --primary-color: #003d7a;
+    --secondary-color: #0099cc;
+    --accent-color: #ff6b35;
     --text-dark: #1a1a1a;
     --text-light: #666666;
-    --bg-light: #2a1515;
+    --bg-light: #f8f9fa;
     --bg-white: #ffffff;
     --border-color: #e0e0e0;
     --success-color: #28a745;
-    --shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 * {
@@ -135,26 +134,23 @@ body {
     text-decoration: none;
     color: var(--text-dark);
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
     position: relative;
-    padding-bottom: 5px;
 }
 
 .nav-link:hover {
-    color: var(--primary-color);
-    text-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
+    color: var(--secondary-color);
 }
 
 .nav-link::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -5px;
     left: 0;
     width: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    transition: width 0.4s ease;
-    box-shadow: 0 0 10px rgba(220, 20, 60, 0.6);
+    height: 2px;
+    background: var(--secondary-color);
+    transition: width 0.3s ease;
 }
 
 .nav-link:hover::after {
@@ -185,7 +181,7 @@ body {
    ============================================ */
 
 .hero {
-    background: linear-gradient(135deg, #8B0000 0%, #1a0a0a 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: var(--bg-white);
     padding: 60px 0;
     min-height: 600px;
@@ -203,7 +199,7 @@ body {
 .hero-image {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 30px;
     box-shadow: var(--shadow-lg);
 }
 
@@ -241,16 +237,14 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--accent-color);
     color: var(--bg-white);
-    border: 2px solid var(--primary-color);
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-    transform: translateY(-3px);
-    box-shadow: 0 0 20px rgba(220, 20, 60, 0.6);
-    text-shadow: 0 0 10px rgba(255, 23, 68, 0.8);
+    background: #e55a2b;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
 }
 
 .btn-secondary {
@@ -270,22 +264,21 @@ body {
 
 .services {
     padding: 80px 0;
-    background: linear-gradient(135deg, #2a1515 0%, #1a0a0a 100%);
+    background: var(--bg-light);
 }
 
 .section-title {
     font-family: 'Poppins', sans-serif;
     font-size: 42px;
     font-weight: 800;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     text-align: center;
     margin-bottom: 15px;
-    text-shadow: 0 2px 10px rgba(139, 0, 0, 0.3);
 }
 
 .section-subtitle {
     text-align: center;
-    color: #999999;
+    color: var(--text-light);
     font-size: 18px;
     margin-bottom: 50px;
 }
@@ -307,8 +300,7 @@ body {
 
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(220, 20, 60, 0.4);
-    border-left: 4px solid var(--primary-color);
+    box-shadow: var(--shadow-lg);
 }
 
 .service-icon {
@@ -331,32 +323,14 @@ body {
 }
 
 .service-link {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-}
-
-.service-link::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    transition: width 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .service-link:hover {
-    color: var(--secondary-color);
-    text-shadow: 0 0 8px rgba(220, 20, 60, 0.5);
-}
-
-.service-link:hover::after {
-    width: 100%;
+    color: var(--accent-color);
 }
 
 /* ============================================
@@ -378,24 +352,21 @@ body {
 .feature {
     text-align: center;
     padding: 30px;
-    background: linear-gradient(135deg, #2a1515 0%, #1a0a0a 100%);
+    background: var(--bg-light);
     border-radius: 10px;
     transition: all 0.3s ease;
-    border: 2px solid transparent;
 }
 
 .feature:hover {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     color: var(--bg-white);
     transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(220, 20, 60, 0.5);
-    border: 2px solid var(--secondary-color);
 }
 
 .feature-icon {
     font-size: 36px;
     margin-bottom: 15px;
-    color: var(--secondary-color);
+    color: var(--success-color);
 }
 
 .feature:hover .feature-icon {
@@ -424,7 +395,7 @@ body {
 
 .about {
     padding: 80px 0;
-    background: linear-gradient(135deg, #1a0a0a 0%, #2a1515 100%);
+    background: var(--bg-light);
 }
 
 .about-content {
@@ -441,9 +412,9 @@ body {
 .about-image img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 30px;
     box-shadow: var(--shadow-lg);
-}
+
 
 .about-text h3 {
     font-family: 'Poppins', sans-serif;
@@ -477,19 +448,17 @@ body {
 }
 
 .testimonial-card {
-    background: linear-gradient(135deg, #2a1515 0%, #1a0a0a 100%);
+    background: var(--bg-light);
     padding: 30px;
     border-radius: 10px;
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
-    border-left: 4px solid var(--primary-color);
-    color: #ffffff;
+    border-left: 4px solid var(--secondary-color);
 }
 
 .testimonial-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(220, 20, 60, 0.4);
-    border-left: 4px solid var(--secondary-color);
+    box-shadow: var(--shadow-lg);
 }
 
 .stars {
@@ -516,7 +485,7 @@ body {
 
 .contact {
     padding: 80px 0;
-    background: linear-gradient(135deg, #8B0000 0%, #1a0a0a 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: var(--bg-white);
 }
 
@@ -557,30 +526,13 @@ body {
 }
 
 .contact-item a {
-    color: var(--secondary-color);
+    color: var(--accent-color);
     text-decoration: none;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.contact-item a::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--secondary-color);
-    transition: width 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .contact-item a:hover {
     color: var(--bg-white);
-    text-shadow: 0 0 10px rgba(255, 23, 68, 0.6);
-}
-
-.contact-item a:hover::after {
-    width: 100%;
 }
 
 .contact-form {
@@ -624,12 +576,11 @@ body {
 .form-group select:focus {
     outline: none;
     background: rgba(255, 255, 255, 0.2);
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 10px rgba(220, 20, 60, 0.4);
+    border-color: var(--accent-color);
 }
 
 .form-group option {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     color: var(--bg-white);
 }
 
@@ -638,7 +589,7 @@ body {
    ============================================ */
 
 .footer {
-    background: linear-gradient(135deg, #1a0a0a 0%, var(--primary-color) 100%);
+    background: var(--primary-color);
     color: var(--bg-white);
     padding: 50px 0 20px;
 }
@@ -673,29 +624,11 @@ body {
 .footer-section a {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-}
-
-.footer-section a::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    transition: width 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-    color: var(--secondary-color);
-    text-shadow: 0 0 8px rgba(220, 20, 60, 0.5);
-}
-
-.footer-section a:hover::after {
-    width: 100%;
+    color: var(--accent-color);
 }
 
 .footer-bottom {
